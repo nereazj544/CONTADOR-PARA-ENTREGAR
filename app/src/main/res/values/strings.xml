@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">CONTADOR-PARA-ENTREGAR</string>
 
-            <!--PANTALLA-->
+    <!--PANTALLA-->
     <string name="creditos">Creditos: Nerea ZJ</string>
     <string name="titulo_p">Clicka por que te aburres</string>
 
-        <!--BOTONES DE ACCION / OTROS-->
+    <!--BOTONES DE ACCION / OTROS-->
     <string name="jugar">Jugar</string>
     <string name="Informacion">Informacion</string>
     <string name="exit">Salir</string>
@@ -16,6 +16,14 @@
     <string name="multiplicador">Aumenta x2</string>
     <string name="clicks">Aumenta +1</string>
     <string name="autoclick">AutoClick</string>
+
+    <!--iNFORMACION-->
+    <string name="menti">Te menti no es informacion sobre el Click por aburrimiento :)</string>
+    <string name="equipos">Equipos de la saga Inazuma Eleven</string>
+
+    <!--EQUIPOS-->
+    <string name="equipo_rec">Lsita de los equipos</string>
+
 
 
     <!--Mercazuma-->

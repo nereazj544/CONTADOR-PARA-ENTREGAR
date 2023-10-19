@@ -7,21 +7,6 @@
     tools:context=".InformacionActivity"
     android:background="@color/black">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="249dp"
-        android:layout_height="86dp"
-        android:backgroundTint="@color/gris_verdoso"
-        android:onClick="volver"
-        android:text="Atras"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="350dp"
@@ -31,7 +16,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Te menti no es informacion sobre el Click por aburrimiento :)"
+        android:text="@string/menti"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30dp"
@@ -49,19 +34,50 @@
         android:layout_height="170dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392"
+        app:layout_constraintVertical_bias="0.338"
         app:srcCompat="@drawable/helado" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="109dp"
         android:layout_height="104dp"
-        android:layout_marginBottom="216dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/l" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="249dp"
+        android:layout_height="86dp"
+        android:backgroundTint="@color/gris_verdoso"
+        android:onClick="volver"
+        android:text="Atras"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
+
+    <Button
+        android:id="@+id/button3"
+        android:onClick="equipos"
+        android:layout_width="286dp"
+        android:layout_height="77dp"
+        android:backgroundTint="@color/rosa_palido"
+        android:text="@string/equipos"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="375dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
