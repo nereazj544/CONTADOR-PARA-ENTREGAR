@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticasGuiadas.MainActivity">
+    tools:context=".PracticasGuiadas.MainActivity"
+    android:background="@drawable/playa">
 
     <Button
         android:id="@+id/button"
@@ -36,6 +37,7 @@
         android:layout_width="317dp"
         android:layout_height="47dp"
         android:text="@string/equipo_rec"
+        android:textColor="@color/black"
         android:textSize="30dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
