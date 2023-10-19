@@ -11,17 +11,16 @@
         android:id="@+id/button"
         android:layout_width="249dp"
         android:layout_height="86dp"
+        android:backgroundTint="@color/gris_verdoso"
         android:onClick="volver"
         android:text="Atras"
-        android:backgroundTint="@color/gris_verdoso"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <TextView
         android:id="@+id/textView2"
@@ -59,10 +58,10 @@
         android:id="@+id/imageView5"
         android:layout_width="109dp"
         android:layout_height="104dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="216dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/l" />
 </androidx.constraintlayout.widget.ConstraintLayout>

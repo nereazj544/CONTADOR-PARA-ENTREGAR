@@ -22,11 +22,13 @@ public class PantallaActivity extends AppCompatActivity {
     public  void  info(View v){
         Intent inf = new Intent(this, InformacionActivity.class);
         startActivity(inf);
+
     }
 
     public  void  opciones(View v){
         Intent op = new Intent(this, OpticonsActivity.class);
         startActivity(op);
+
     }
     public  void  salir(View v){
         System.exit(0);

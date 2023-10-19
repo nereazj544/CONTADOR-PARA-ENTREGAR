@@ -13,25 +13,19 @@
         android:theme="@style/Theme.CONTADORPARAENTREGAR"
         tools:targetApi="31">
         <activity
-            android:name=".OpticonsActivity"
+            android:name=".MercazumaActivity"
             android:exported="false" />
-        <activity
-            android:name=".InformacionActivity"
-            android:exported="false" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".OpticonsActivity" />
+        <activity android:name=".InformacionActivity" />
         <activity
             android:name=".PantallaActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
-
-
     </application>
 
 </manifest>

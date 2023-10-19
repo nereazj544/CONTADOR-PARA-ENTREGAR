@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">CONTADOR-PARA-ENTREGAR</string>
+
+            <!--PANTALLA-->
+    <string name="creditos">Creditos: Nerea ZJ</string>
+    <string name="titulo_p">Clicka por que te aburres</string>
+
+        <!--BOTONES DE ACCION / OTROS-->
+    <string name="jugar">Jugar</string>
+    <string name="Informacion">Informacion</string>
+    <string name="exit">Salir</string>
+    <string name="opciones">Opciones</string>
+    <string name="no_op">No hay  opciones</string>
+
+    <!--BOTONES DE MEJORA-->
+    <string name="multiplicador">Aumenta x2</string>
+    <string name="clicks">Aumenta +1</string>
+    <string name="autoclick">AutoClick</string>
+
+
+    <!--Mercazuma-->
+    <string name="titulo_m">Mercazuma</string>
+    <string name="des_mercazuma">Gasta aqui tus puntos de amistad</string>
+
+
+    <!--COMENTARIO BASE-->
 </resources>
