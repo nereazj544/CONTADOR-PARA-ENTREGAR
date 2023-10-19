@@ -69,15 +69,16 @@
 
     <Button
         android:id="@+id/button3"
-        android:onClick="equipos"
-        android:layout_width="286dp"
-        android:layout_height="77dp"
+        android:layout_width="333dp"
+        android:layout_height="82dp"
         android:backgroundTint="@color/rosa_palido"
+        android:onClick="equipos"
         android:text="@string/equipos"
-        android:textSize="20dp"
         android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="375dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
 </androidx.constraintlayout.widget.ConstraintLayout>
