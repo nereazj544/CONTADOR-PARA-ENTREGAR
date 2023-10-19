@@ -19,23 +19,41 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="6dp">
+
             <ImageView
-                android:id="@+id/alpino"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:id="@+id/equipoimg"
+                android:layout_width="120dp"
+                android:layout_height="86dp"
                 android:layout_gravity="center"
                 android:paddingLeft="14dp"
                 android:paddingRight="14dp"
-                android:src="@drawable/alpino"
-                />
+                android:src="@drawable/alpino" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="280dp"
+                android:layout_height="89dp"
                 android:layout_marginStart="4dp"
-                android:layout_toEndOf="@+id/alpino"
-                android:layout_toRightOf="@+id/alpino"
-                ></LinearLayout>
+                android:layout_toEndOf="@+id/equipoimg"
+                android:layout_toRightOf="@+id/equipoimg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/principal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="Equipo: "
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nomequipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:text="Alpino"
+                    android:textSize="25dp"/>
+            </LinearLayout>
         </RelativeLayout>
 
     </RelativeLayout>

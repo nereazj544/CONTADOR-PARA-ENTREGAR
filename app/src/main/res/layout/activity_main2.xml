@@ -22,6 +22,7 @@
         app:layout_constraintVertical_bias="0.975" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemlist"
         android:layout_width="398dp"
         android:layout_height="480dp"
         android:layout_marginTop="80dp"
