@@ -26,4 +26,9 @@ public class InformacionActivity extends AppCompatActivity {
         Intent equi = new Intent(this, MainActivity.class);
         startActivity(equi);
     }
+    public void personajes(View v){
+        Intent per = new Intent(this, com.example.contador_para_entregar.PracticasGuiadas.ListView.MainActivity.class);
+        startActivity(per);
+    }
+
     }
