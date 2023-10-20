@@ -7,10 +7,11 @@
 
     <!--BOTONES DE ACCION / OTROS-->
     <string name="jugar">Jugar</string>
-    <string name="Informacion">Informacion</string>
+    <string name="Informacion">Información</string>
     <string name="exit">Salir</string>
     <string name="opciones">Opciones</string>
     <string name="no_op">No hay  opciones</string>
+    <string name="atras">Atrás</string>
 
     <!--BOTONES DE MEJORA-->
     <string name="multiplicador">Aumenta x2</string>
@@ -18,7 +19,7 @@
     <string name="autoclick">AutoClick</string>
 
     <!--iNFORMACION-->
-    <string name="menti">Te menti no es informacion sobre el Click por aburrimiento :)</string>
+    <string name="menti">Te mentí no es información sobre el Click por aburrimiento :)</string>
     <string name="equipos">Equipos de la saga Inazuma Eleven</string>
 
     <!--EQUIPOS-->
@@ -29,7 +30,7 @@
 
     <!--Mercazuma-->
     <string name="titulo_m">Mercazuma</string>
-    <string name="des_mercazuma">Gasta aqui tus puntos de amistad</string>
+    <string name="des_mercazuma">Gasta aquí tus puntos de amistad</string>
 
 
     <!--COMENTARIO BASE-->

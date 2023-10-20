@@ -57,7 +57,7 @@
         android:layout_height="86dp"
         android:backgroundTint="@color/gris_verdoso"
         android:onClick="volver"
-        android:text="Atras"
+        android:text="@string/atras"
         android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
