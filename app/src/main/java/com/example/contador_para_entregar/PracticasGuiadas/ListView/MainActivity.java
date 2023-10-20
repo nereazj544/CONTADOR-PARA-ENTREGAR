@@ -2,8 +2,10 @@ package com.example.contador_para_entregar.PracticasGuiadas.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.contador_para_entregar.InformacionActivity;
 import com.example.contador_para_entregar.R;
 
 import android.app.ListActivity;
@@ -61,7 +63,7 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
         };
 
         PersonajeAdapter adapter = new PersonajeAdapter(this, R.layout.listapersonaje, Arrays.asList(personajes));
-        setListAdapter(adapter);
+
 
         ListView listView = getListView();
         listView.setOnItemClickListener(this);
@@ -72,5 +74,10 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
         Personajes personajes = (Personajes) adapterView.getItemAtPosition(position);
         String nombre = personajes.getNombre();
         Toast.makeText(this, nombre, Toast.LENGTH_LONG).show();
+    }
+
+    public  void  atras(View v){
+        Intent at = new Intent(this, InformacionActivity.class);
+        startActivity(at);
     }
 }

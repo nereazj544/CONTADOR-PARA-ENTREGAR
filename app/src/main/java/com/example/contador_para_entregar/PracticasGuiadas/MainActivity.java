@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.contador_para_entregar.InformacionActivity;
+import com.example.contador_para_entregar.PantallaActivity;
 import com.example.contador_para_entregar.R;
 
 import java.util.Arrays;
@@ -43,5 +47,10 @@ public class MainActivity extends AppCompatActivity {
         );
         rv.setAdapter(new EquipoAdarer(l));
 
+    }
+
+    public  void  atras(View v){
+        Intent at = new Intent(this, InformacionActivity.class);
+        startActivity(at);
     }
 }
