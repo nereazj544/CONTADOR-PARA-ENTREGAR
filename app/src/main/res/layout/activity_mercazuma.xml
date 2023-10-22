@@ -8,7 +8,7 @@
     android:background="@drawable/wall">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/mercazumatitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -26,8 +26,8 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="235dp"
-        android:layout_height="21dp"
+        android:layout_width="319dp"
+        android:layout_height="19dp"
         android:layout_marginTop="116dp"
         android:text="@string/des_mercazuma"
         android:textAlignment="center"
@@ -36,4 +36,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/titulomb"
+        android:layout_width="268dp"
+        android:layout_height="37dp"
+        android:text="@string/mb"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <TextView
+        android:id="@+id/tituloac"
+        android:layout_width="333dp"
+        android:layout_height="41dp"
+        android:text="@string/ac"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="283dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
