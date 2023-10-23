@@ -29,8 +29,8 @@
     <!--Mercazuma-->
     <string name="titulo_m">Mercazuma</string>
     <string name="des_mercazuma">Gasta aquí tus puntos de pasion y amistad</string>
-    <string name="mb">Mejoras Basicas</string>
-    <string name="ac">Supertecnica: AutoClick</string>
+    <string name="mb">Supertecnicas de tiro: Aullido de Lobo y La Aurora</string>
+    <string name="ac">Supertecnica: Carrera Relámpago</string>
 
     <!--COMENTARIO BASE-->
 </resources>
