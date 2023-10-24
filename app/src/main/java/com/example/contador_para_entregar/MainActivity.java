@@ -1,7 +1,9 @@
 package com.example.contador_para_entregar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -58,6 +60,17 @@ public class MainActivity extends AppCompatActivity {
         boton_AutoClick = (Button) findViewById(R.id.AutoClicker);
         //boton_multiplicacion = (Button) findViewById(R.id.multiplicar);
         //boton = (Button) findViewById (R.id.button1);
+
+
+        //ALERTA EN EL BOTON DE RESETEAR
+
+        boton_resetear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Alerta();
+            }
+        });
+
 
     }
 
@@ -123,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return foVal;
     }
+
     public void mejora(View v) {
         if (num.compareTo(new BigInteger("100")) >= 0) {
             num = num.subtract(costo);
@@ -141,11 +155,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    /* //RESET
     public void rest(View v){
         num = new BigInteger("0");
         contador.setText(num.toString());
         contador.setTextColor(Color.WHITE);
-    }
+    }*/
 
 //AUTOCLICK
     public  void autoclick(View v){
@@ -184,4 +199,36 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    //ALERTA DEL BOTON RESET
+    private  void Alerta() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("¿Restablecer?");
+        builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                num = BigInteger.ONE;
+                contador.setText(num.toString());
+                contador.setTextColor(Color.WHITE);
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss(); //No hara nada
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
+
+
+//END APP
 }
+
+
+
+
