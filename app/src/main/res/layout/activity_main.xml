@@ -26,86 +26,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.077" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="378dp"
-        android:layout_height="261dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="125dp"
-            android:layout_height="222dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            app:srcCompat="@drawable/copi" />
-
-        <LinearLayout
-            android:layout_width="206dp"
-            android:layout_height="218dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:minHeight="199dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="158dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="@color/verde_claro"
-                android:onClick="mejora"
-                android:text="Coste: 100"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@color/gris_verdoso"
-                android:text="Aumenta +1; el primer coste son 100"
-                android:textAlignment="center"
-                android:textColor="@color/red"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/multiplicar"
-                android:layout_width="182dp"
-                android:layout_height="64dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/rosa_palido"
-                android:onClick="multiplicador"
-                android:text="Coste mutiplicación (x2): 1000"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="14dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <ImageView
         android:id="@+id/Kariya_Kirino"
-        android:layout_width="155dp"
-        android:layout_height="177dp"
+        android:layout_width="213dp"
+        android:layout_height="204dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -115,13 +40,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315"
+        app:layout_constraintVertical_bias="0.402"
         app:srcCompat="@drawable/copia" />
 
     <Button
         android:id="@+id/restear"
-        android:layout_width="149dp"
-        android:layout_height="75dp"
+        android:layout_width="212dp"
+        android:layout_height="74dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -133,30 +58,27 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintVertical_bias="0.737" />
 
     <Button
         android:id="@+id/AutoClicker"
-        android:layout_width="149dp"
-        android:layout_height="75dp"
+        android:layout_width="126dp"
+        android:layout_height="61dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:backgroundTint="@color/ambar"
         android:onClick="autoclick"
         android:text="AutoClick coste: 10"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/casita"
@@ -174,6 +96,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/casita" />
+
+    <ImageView
+        android:id="@+id/tienda"
+        android:layout_width="203dp"
+        android:layout_height="115dp"
+        android:onClick="mercazuma"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922"
+        app:srcCompat="@drawable/tienda" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

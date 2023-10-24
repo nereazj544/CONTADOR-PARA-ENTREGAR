@@ -14,7 +14,6 @@ public class OpticonsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_opticons);
     }
     public  void  volver(View v){
-        //Esto va a ir a la otra pantalla
         Intent in = new Intent(this, PantallaActivity.class);
         startActivity(in);
         finish();

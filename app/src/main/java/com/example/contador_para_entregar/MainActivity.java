@@ -53,14 +53,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         contador=(TextView) findViewById(R.id.textocontador);
         contador.setText(num.toString());
-        boton = (Button) findViewById (R.id.button1);
         Kariya_Kirino = (ImageView) findViewById(R.id.Kariya_Kirino);
-        boton_multiplicacion = (Button) findViewById(R.id.multiplicar);
         boton_resetear = (Button) findViewById(R.id.restear);
         boton_AutoClick = (Button) findViewById(R.id.AutoClicker);
+        //boton_multiplicacion = (Button) findViewById(R.id.multiplicar);
+        //boton = (Button) findViewById (R.id.button1);
 
     }
 
+    //IR A OTRAS PAGINAS
+    public  void  volver(View v){
+        //Esto va a ir a la otra pantalla
+        Intent in = new Intent(this, PantallaActivity.class);
+        startActivity(in);
+        finish();
+    }
+    public  void  shop(View v){
+        Intent mercazuma = new Intent(this, MercazumaActivity.class);
+        mercazuma.putExtra("data", num.toString());
+        startActivity(mercazuma);
+    }
+
+
+    //CONTADOR + ANIMACION
     public void sumar(View v){
         ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         fade_in.setDuration(100);
@@ -89,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
        //return 0;
         */
     }
+
+
+    //MEJORAS EN EL JUEGO
     public String NumeroFormato(BigInteger val) {
         String foVal = "";
         if (val.compareTo(mil) >= 0 && val.compareTo(millon) < 0) {
@@ -114,8 +132,6 @@ public class MainActivity extends AppCompatActivity {
             boton.setText("Coste: " + costo);
         }
     }
-
-
     public void multiplicador (View v){
         if(num.compareTo(new BigInteger("1000")) >=0){
             num=num.subtract(new BigInteger("1000"));
@@ -125,17 +141,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
     public void rest(View v){
         num = new BigInteger("0");
         contador.setText(num.toString());
         contador.setTextColor(Color.WHITE);
     }
-    public  void  atras(View v){
-        Intent at = new Intent(this, PantallaActivity.class);
-        startActivity(at);
-    }
 
+//AUTOCLICK
     public  void autoclick(View v){
         if (num.compareTo(new BigInteger("10")) >= 0){
             num = num.subtract(new BigInteger("10"));

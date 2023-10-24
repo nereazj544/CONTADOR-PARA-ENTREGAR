@@ -39,8 +39,8 @@
 
     <TextView
         android:id="@+id/titulomb"
-        android:layout_width="268dp"
-        android:layout_height="37dp"
+        android:layout_width="369dp"
+        android:layout_height="62dp"
         android:text="@string/mb"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -48,18 +48,86 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="146dp" />
+        tools:layout_editor_absoluteY="146dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tituloac"
-        android:layout_width="333dp"
-        android:layout_height="41dp"
+        android:layout_width="377dp"
+        android:layout_height="46dp"
         android:text="@string/ac"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="283dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="380dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="232dp"
+        android:layout_height="57dp"
+        android:text="@string/autoclick"
+        android:backgroundTint="@color/gris_azul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloac"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="392dp"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulomb"
+        app:layout_constraintVertical_bias="0.053">
+
+        <Button
+            android:id="@+id/aumentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="mejora"
+            android:text="@string/clicks" />
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="multiplicador"
+            android:text="@string/multiplicador" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="69dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.342"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/aurora" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="69dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/loboaullido" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
