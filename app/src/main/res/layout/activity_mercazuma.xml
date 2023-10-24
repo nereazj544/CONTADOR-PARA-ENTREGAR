@@ -100,6 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="mejora"
+            android:textStyle="bold"
+            android:textColor="@color/gris_verdoso"
+            android:backgroundTint="@color/xavier"
             android:text="@string/clicks" />
 
         <Button
@@ -108,7 +111,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="multiplicador"
-            android:text="@string/multiplicador" />
+            android:text="@string/multiplicador"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/shawn"
+            />
 
     </LinearLayout>
 
@@ -116,9 +123,10 @@
         android:id="@+id/imageView"
         android:layout_width="69dp"
         android:layout_height="70dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/aurora" />
@@ -128,8 +136,9 @@
         android:layout_width="69dp"
         android:layout_height="70dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/loboaullido" />
@@ -139,8 +148,10 @@
         android:layout_width="148dp"
         android:layout_height="37dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/atras"
-        android:textColor="@color/black"
+        android:text="@string/vol"
+        android:textStyle="bold"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(in);
         finish();
     }
+
+    //MERCAZUMA
     public  void  shop(View v){
         Intent mercazuma = new Intent(this, MercazumaActivity.class);
         mercazuma.putExtra("data", num.toString());
