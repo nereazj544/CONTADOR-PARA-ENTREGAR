@@ -18,14 +18,16 @@ public class MercazumaActivity extends AppCompatActivity {
         Intent intent = getIntent();
        Bundle datum = intent.getExtras();
 
-       if (datum != null){
+       if (datum.isEmpty()){
+           //Datos que se recogeran de la base de datos interna del dispositivo.
+       } else{
            String valorT = datum.getString("valor");
            String costoT = datum.getString("costo");
            String AcostT = datum.getString("AClik");
 
            BigInteger valor = new BigInteger(valorT);
            BigInteger costo = new BigInteger(costoT);
-          int ACost = Integer.parseInt(AcostT);
+           int ACost = Integer.parseInt(AcostT);
 
            Button Aumentar = findViewById(R.id.aumentar);
            Button Multiplicar = findViewById(R.id.multiply);
@@ -36,10 +38,11 @@ public class MercazumaActivity extends AppCompatActivity {
            AC.setText("AutoClick costo: " + costo);
 
        }
-       
+    }
 
-
-
+    public void volver(View v){
+        Intent volver = new Intent(this, MainActivity.class);
+        startActivity(volver);
     }
 
 

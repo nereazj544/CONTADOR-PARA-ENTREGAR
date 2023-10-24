@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         //ALERTA EN EL BOTON DE RESETEAR
-
         boton_resetear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -234,11 +233,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-
-
-
-//END APP
+    //END APP
 }
 
 
