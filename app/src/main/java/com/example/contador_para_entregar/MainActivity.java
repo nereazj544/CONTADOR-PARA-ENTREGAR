@@ -238,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
 
     //CAMBIAR EL PULSADOR DE LA IMAGEN
     /*
-    //movida con lo de cambiar de imagen
     int [] img = {R.drawable.shawn, R.drawable.hakuryuu, R.drawable.paolo, R.drawable.copia};
     int cont = 0;
     public void cambiar(View v){
