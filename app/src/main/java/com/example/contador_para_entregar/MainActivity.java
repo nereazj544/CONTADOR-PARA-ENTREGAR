@@ -73,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    //movida rara
+    public void cambiar(View v){
+        Kariya_Kirino.setImageResource(R.drawable.shawn);
+    }
+
+
+
+
     //IR A OTRAS PAGINAS
     public  void  volver(View v){
         //Esto va a ir a la otra pantalla

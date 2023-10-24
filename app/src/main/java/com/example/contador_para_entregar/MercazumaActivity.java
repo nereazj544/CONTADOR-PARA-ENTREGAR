@@ -16,7 +16,8 @@ public class MercazumaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mercazuma);
 
         Intent intent = getIntent();
-       Bundle datum = intent.getExtras();
+        Bundle datum = intent.getExtras();
+
 
        if (datum.isEmpty()){
            //Datos que se recogeran de la base de datos interna del dispositivo.

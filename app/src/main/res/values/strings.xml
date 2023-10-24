@@ -32,6 +32,7 @@
     <string name="mb">Supertecnicas de tiro: Aullido de Lobo y La Aurora</string>
     <string name="ac">Supertecnica: Carrera Relámpago</string>
     <string name="vol">Volver al juego</string>
+    <string name="contadorclicks">Tus puntos de Pasión y Amistad: </string>
 
     <!--COMENTARIO BASE-->
 </resources>
