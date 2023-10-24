@@ -1,5 +1,7 @@
 package com.example.contador_para_entregar;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
     BigInteger ACcost = new BigInteger("10");
     int automatico = 1;
 
+    //Interconectividad entre los Activitys
+
+    private ActivityResultLauncher<Intent> launcher;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
         //boton_multiplicacion = (Button) findViewById(R.id.multiplicar);
         //boton = (Button) findViewById (R.id.button1);
 
-
         //ALERTA EN EL BOTON DE RESETEAR
         boton_resetear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +76,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK){
+                        Intent data = result.getData();
+                        if(data != null){
+                            String newData = data.getStringExtra("data");
+                            contador.setText(newData);
+                        }
+                    }
+                });{
+
+        }
 
     }
 
@@ -95,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         datum.putInt("auto", automatico);
 
         mercazuma.putExtras(datum);
-        startActivity(mercazuma);
+        launcher.launch(mercazuma);
     }
 
 

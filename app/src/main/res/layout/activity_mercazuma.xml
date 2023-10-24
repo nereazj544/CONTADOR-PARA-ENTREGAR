@@ -158,11 +158,12 @@
 
     <TextView
         android:id="@+id/puntosclicks"
-        android:layout_width="270dp"
-        android:layout_height="40dp"
+        android:layout_width="391dp"
+        android:layout_height="45dp"
         android:layout_marginTop="152dp"
         android:text="@string/contadorclicks"
         android:textAlignment="center"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
