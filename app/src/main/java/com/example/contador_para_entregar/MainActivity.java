@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         contador.setText(num.toString());
         Kariya_Kirino = (ImageView) findViewById(R.id.Kariya_Kirino);
         boton_resetear = (Button) findViewById(R.id.restear);
-        boton_AutoClick = (Button) findViewById(R.id.AutoClicker);
+        //boton_AutoClick = (Button) findViewById(R.id.AutoClicker);
         //boton_multiplicacion = (Button) findViewById(R.id.multiplicar);
         //boton = (Button) findViewById (R.id.button1);
 
