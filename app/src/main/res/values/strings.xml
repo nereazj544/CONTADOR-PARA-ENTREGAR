@@ -14,9 +14,9 @@
     <string name="atras">Atrás</string>
 
     <!--BOTONES DE MEJORA-->
-    <string name="multiplicador">Aumenta x2</string>
-    <string name="clicks">Aumenta +1</string>
-    <string name="autoclick">AutoClick</string>
+    <string name="multiplicador">Aumenta Coste: 100</string>
+    <string name="clicks">Aumenta Coste: 100</string>
+    <string name="autoclick">AutoClick Coste: 10</string>
 
     <!--iNFORMACION-->
     <string name="menti">Te mentí no es información sobre el Click por aburrimiento :)</string>

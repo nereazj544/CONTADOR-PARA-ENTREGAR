@@ -85,7 +85,17 @@ public class MainActivity extends AppCompatActivity {
     //MERCAZUMA
     public  void  shop(View v){
         Intent mercazuma = new Intent(this, MercazumaActivity.class);
-        mercazuma.putExtra("data", num.toString());
+        Bundle datum = new Bundle();
+
+        //paso de mejoras a la tienda
+        datum.putString("data", num.toString());
+        datum.putString("valor", valor.toString());
+        datum.putString("costo", costo.toString());
+        datum.putString("costo_mu", costo_multiplicacion.toString());
+        datum.putString("AClik", ACcost.toString());
+        datum.putInt("auto", automatico);
+
+        mercazuma.putExtras(datum);
         startActivity(mercazuma);
     }
 
