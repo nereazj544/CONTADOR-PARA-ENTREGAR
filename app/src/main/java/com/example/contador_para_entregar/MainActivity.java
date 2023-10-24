@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                num = BigInteger.ONE;
+                num = BigInteger.ZERO;
                 contador.setText(num.toString());
                 contador.setTextColor(Color.WHITE);
             }
