@@ -73,15 +73,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    //movida rara
-    public void cambiar(View v){
-        Kariya_Kirino.setImageResource(R.drawable.shawn);
-    }
-
-
-
-
     //IR A OTRAS PAGINAS
     public  void  volver(View v){
         //Esto va a ir a la otra pantalla
@@ -241,6 +232,23 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+
+
+
+    //CAMBIAR EL PULSADOR DE LA IMAGEN
+    /*
+    //movida con lo de cambiar de imagen
+    int [] img = {R.drawable.shawn, R.drawable.hakuryuu, R.drawable.paolo, R.drawable.copia};
+    int cont = 0;
+    public void cambiar(View v){
+        Kariya_Kirino.setImageResource(img[cont]);
+        cont++;
+        if (cont >= img.length){
+            cont=0;
+        }
+    }
+     */
 
     //END APP
 }
