@@ -23,7 +23,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
-
     TextView contador;
     Button boton;
     Button boton_multiplicacion;
@@ -106,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         //paso de mejoras a la tienda
         datum.putString("data", num.toString());
+
         datum.putString("valor", valor.toString());
         datum.putString("costo", costo.toString());
         datum.putString("costo_mu", costo_multiplicacion.toString());
@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //MEJORAS EN EL JUEGO
+
     public String NumeroFormato(BigInteger val) {
         String foVal = "";
         if (val.compareTo(mil) >= 0 && val.compareTo(millon) < 0) {
@@ -184,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
     /* //RESET
     public void rest(View v){
         num = new BigInteger("0");
@@ -228,7 +230,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
     //ALERTA DEL BOTON RESET
     private  void Alerta() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -251,21 +252,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
-
-
-    //CAMBIAR EL PULSADOR DE LA IMAGEN
-    /*
-    int [] img = {R.drawable.shawn, R.drawable.hakuryuu, R.drawable.paolo, R.drawable.copia};
-    int cont = 0;
-    public void cambiar(View v){
-        Kariya_Kirino.setImageResource(img[cont]);
-        cont++;
-        if (cont >= img.length){
-            cont=0;
-        }
-    }
-     */
 
     //END APP
 }
