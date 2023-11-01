@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 num = BigInteger.ZERO;
                 contador.setText(num.toString());
-                contador.setTextColor(Color.WHITE);
+                contador.setTextColor(Color.BLACK);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
