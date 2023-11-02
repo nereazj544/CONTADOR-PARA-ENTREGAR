@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
 public class MercazumaActivity extends AppCompatActivity {
     TextView numerocont;
     TextView ocu;
+    Button AutoClick;
 
     BigInteger num = BigInteger.ZERO;
     BigInteger valor = BigInteger.ONE;
@@ -53,17 +54,16 @@ public class MercazumaActivity extends AppCompatActivity {
         numerocont = (TextView) findViewById(R.id.puntosclicks);
         Button aumentar = findViewById(R.id.aumentar);
         Button Multiplicar = findViewById(R.id.multiply);
-        Button AC = findViewById(R.id.AutoC);
+        Button AutoClick = findViewById(R.id.AutoC);
 
-       if (datum.isEmpty()){
+       if (datum != null){
            //Datos que se recogeran de la base de datos interna del dispositivo.
-       } else{
            String numero = datum.getString("data");
            numerocont.setText("Tus puntos de Pasión y Amistad: " + numero);
-           ocu.setText(numero);
+           ocu.setText(numero); //Ignorar este
            String KK = datum.getString("animacion");
 
-/*
+
            String valorT = datum.getString("valor");
            String costoT = datum.getString("costo");
            String AcostT = datum.getString("AClik");
@@ -75,11 +75,13 @@ public class MercazumaActivity extends AppCompatActivity {
            int ACost = Integer.parseInt(AcostT);
 
 
- */
            //BOTONES
+           /*
            Multiplicar.setText("Multiplicar costo: " + costo_multiplicacion);
-           AC.setText("AutoClick costo: " + ACcost);
+           AutoClick.setText("AutoClick costo: " + ACcost);
            aumentar.setText("Aumetar Coste: " + costo);
+
+            */
 
        }
     }
@@ -95,7 +97,59 @@ public class MercazumaActivity extends AppCompatActivity {
          */
     }
 
+    public void autoclick(View v) {
+        if (num.compareTo(ACcost) >= 0) {
+            num = num.subtract(ACcost);
+            valor = valor.add(new BigInteger("10"));
+            ACcost = ACcost.add(new BigInteger("10"));
+            AutoClick.setText("AutoClick coste: " + ACcost);
+            AutoClick();
+
+            // Actualiza los botones en MainActivity si es necesario
+            Intent intent = new Intent();
+            intent.putExtra("data", num.toString());
+            setResult(RESULT_OK, intent);
+        }
+    }
+    public void AutoClick(){
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            while(true){
+                try{
+                    Thread.sleep(1000);
+                } catch(InterruptedException e){
+                    throw new RuntimeException(e);
+                }
+                num = num.add(BigInteger.valueOf(auto));
+                //Background work here
+                handler.post(() -> {
+                    //UI Thread work here
+                    ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                    fade_in.setDuration(100);
+                    numerocont.setText(NumeroFormato(num));
 
 
+                });}
+        });
+
+    }
+
+    public String NumeroFormato(BigInteger val) {
+        String foVal = "";
+        if (val.compareTo(mil) >= 0 && val.compareTo(millon) < 0) {
+            foVal = val.divide(mil) + "Mil";
+            numerocont.setTextColor(Color.RED);
+        } else if (val.compareTo(millon) >= 0 && val.compareTo(billon) < 0) {
+            foVal = val.divide(millon) + "M";
+            numerocont.setTextColor(Color.GREEN);
+        } else if (val.compareTo(billon) >= 0) {
+            foVal = val.divide(billon) + "B";
+            numerocont.setTextColor(Color.CYAN);
+        } else {
+            foVal = val.toString();
+        }
+        return foVal;
+    }
     //END APP
 }
