@@ -22,6 +22,9 @@ public class MercazumaActivity extends AppCompatActivity {
     TextView numerocont;
     TextView ocu;
     Button AutoClick;
+    Button Multiplicar;
+    Button aumentar;
+
 
     BigInteger num = BigInteger.ZERO;
     BigInteger valor = BigInteger.ONE;
@@ -52,9 +55,9 @@ public class MercazumaActivity extends AppCompatActivity {
 
         ocu = (TextView) findViewById(R.id.oc);
         numerocont = (TextView) findViewById(R.id.puntosclicks);
-        Button aumentar = findViewById(R.id.aumentar);
-        Button Multiplicar = findViewById(R.id.multiply);
-        Button AutoClick = findViewById(R.id.AutoC);
+       // Button aumentar = findViewById(R.id.aumentar);
+        //Button Multiplicar = findViewById(R.id.multiply);
+        //Button AutoClick = findViewById(R.id.AutoC);
 
        if (datum != null){
            //Datos que se recogeran de la base de datos interna del dispositivo.

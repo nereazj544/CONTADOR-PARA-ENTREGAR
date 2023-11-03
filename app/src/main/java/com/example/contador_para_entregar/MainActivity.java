@@ -194,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
 //AUTOCLICK
-    /*
     public  void autoclick(View v){
         if (num.compareTo(new BigInteger("10")) >= 0){
             num = num.subtract(new BigInteger("10"));
@@ -232,7 +231,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-     */
     //ALERTA DEL BOTON RESET
     private  void Alerta() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
