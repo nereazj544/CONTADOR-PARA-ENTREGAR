@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.contador_para_entregar.InformacionActivity;
 import com.example.contador_para_entregar.PantallaActivity;
@@ -52,5 +55,26 @@ public class MainActivity extends AppCompatActivity {
     public  void  atras(View v){
         Intent at = new Intent(this, InformacionActivity.class);
         startActivity(at);
+    }
+
+
+    //OPCIONES
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Choose your option");
+        getMenuInflater().inflate(R.menu.men, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item1) {
+            Toast.makeText(this, "Opcion 1", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.item2) {
+            Toast.makeText(this, "opcion 2", Toast.LENGTH_SHORT).show();
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
