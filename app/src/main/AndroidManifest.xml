@@ -17,7 +17,8 @@
             android:exported="false" />
         <activity
             android:name=".PracticasGuiadas.MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"/>
         <activity
             android:name=".MercazumaActivity"
             android:exported="false" />
