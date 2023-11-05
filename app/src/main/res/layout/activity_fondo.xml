@@ -25,7 +25,7 @@
         app:srcCompat="@drawable/casita_ne" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/img"
         android:layout_width="383dp"
         android:layout_height="329dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +44,7 @@
         android:text="@string/back"
         android:textColor="@color/black"
         android:textSize="30dp"
+        android:onClick="cambiar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
