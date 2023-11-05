@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.contador_para_entregar.MH.MonsterhighActivity;
+
 public class OpticonsActivity extends AppCompatActivity {
 
     @Override
@@ -38,11 +40,28 @@ public class OpticonsActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item1) {
-            Toast.makeText(this, "Opcion 1", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.item2) {
-            Toast.makeText(this, "opcion 2", Toast.LENGTH_SHORT).show();
 
+        /*
+        if (id == R.id.item1) {
+        // Acción para la opción 1
+        Intent intent = new Intent(this, OtroActivity.class);
+        startActivity(intent);
+    } else if (id == R.id.item2) {
+        // Acción para la opción 2
+        Intent intent = new Intent(this, OtroActivity.class);
+        startActivity(intent);
+    }
+    return super.onOptionsItemSelected(item);
+         */
+        if (id == R.id.item1) {
+            Toast.makeText(this, "Monster High", Toast.LENGTH_SHORT).show();
+            Intent monsterhigh = new Intent(this, MonsterhighActivity.class);
+            startActivity(monsterhigh);
+        } else if (id == R.id.item2) {
+            Toast.makeText(this, "Cambien Wallpaper", Toast.LENGTH_SHORT).show();
+
+        }else if(id == R.id.item3){
+            Toast.makeText(this, "Musica :)", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

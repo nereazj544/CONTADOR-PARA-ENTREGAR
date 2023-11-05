@@ -13,17 +13,20 @@
         android:theme="@style/Theme.CONTADORPARAENTREGAR"
         tools:targetApi="31">
         <activity
+            android:name=".MH.MonsterhighActivity"
+            android:exported="false" />
+        <activity
             android:name=".PracticasGuiadas.ListView.MainActivity"
             android:exported="false" />
         <activity
             android:name=".PracticasGuiadas.MainActivity"
-            android:exported="false"
-          />
+            android:exported="false" />
         <activity
             android:name=".MercazumaActivity"
             android:exported="false" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".OpticonsActivity"
+        <activity
+            android:name=".OpticonsActivity"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity android:name=".InformacionActivity" />
         <activity
