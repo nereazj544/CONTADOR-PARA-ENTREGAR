@@ -41,6 +41,15 @@
     <string name="back">Cambien Imagen</string>
     <string name="musica">Musica :)</string>
 
+    <!--MONSTER HIGH-->
+    <string name="mhp">Algunos Personajes de Monster High</string>
+
+
+    <!--MUSICA-->
+    <string name="monsterhigh">Monster High</string>
+    <string name="ie">Inazuma Eleven</string>
+    <string name="lol">Paranoia (LoL)</string>
+
 
     <!--COMENTARIO BASE-->
 </resources>

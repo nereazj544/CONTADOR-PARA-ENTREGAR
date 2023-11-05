@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.contador_para_entregar.MH.RecylcerMonsterHigh.MonsterHighRecycler;
 import com.example.contador_para_entregar.OpticonsActivity;
 import com.example.contador_para_entregar.PantallaActivity;
 import com.example.contador_para_entregar.R;
@@ -22,5 +23,10 @@ public class MonsterhighActivity extends AppCompatActivity {
         Intent in = new Intent(this, OpticonsActivity.class);
         startActivity(in);
         finish();
+    }
+
+    public void mhlista(View v){
+        Intent mh = new Intent(this, MonsterHighRecycler.class);
+        startActivity(mh);
     }
 }

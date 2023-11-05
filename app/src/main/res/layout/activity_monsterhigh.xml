@@ -9,19 +9,38 @@
 
     <ImageView
         android:id="@+id/casita"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="145dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:onClick="atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/casita" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="359dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/mh"
+        android:text="Button"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:onClick="mhlista"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.129"
+        tools:text="@string/mhp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

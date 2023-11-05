@@ -55,6 +55,7 @@ public class MonsterHighRecycler extends AppCompatActivity {
     public  void  atras(View v){
         Intent at = new Intent(this, MonsterhighActivity.class);
         startActivity(at);
+        finish();
     }
 
 }
