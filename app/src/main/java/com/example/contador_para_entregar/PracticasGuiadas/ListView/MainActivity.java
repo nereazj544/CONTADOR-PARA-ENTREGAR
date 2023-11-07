@@ -22,7 +22,7 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.listview);
 
         Personajes[] personajes = new Personajes[]{
 
@@ -65,8 +65,9 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
         PersonajeAdapter adapter = new PersonajeAdapter(this, R.layout.listapersonaje, Arrays.asList(personajes));
 
 
-        ListView listView = getListView();
-        listView.setOnItemClickListener(this);
+      ListView listView = findViewById(R.id.list);
+      listView.setAdapter(adapter = new PersonajeAdapter(this, R.layout.listapersonaje, Arrays.asList(personajes)));
+
     }
 
     @Override
