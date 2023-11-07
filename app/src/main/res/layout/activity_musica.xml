@@ -22,7 +22,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.013"
-        app:srcCompat="@drawable/casita" />
+        app:srcCompat="@drawable/casita"
+        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/ie"

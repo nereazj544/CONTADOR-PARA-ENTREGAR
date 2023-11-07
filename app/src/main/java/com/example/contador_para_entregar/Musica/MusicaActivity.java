@@ -14,8 +14,8 @@ import com.example.contador_para_entregar.InformacionActivity;
 import com.example.contador_para_entregar.OpticonsActivity;
 import com.example.contador_para_entregar.R;
 
-public class MusicaActivity extends AppCompatActivity {
-    public class MainActivity extends AppCompatActivity {
+
+    public class MusicaActivity extends AppCompatActivity {
 
         Button buttonIE;
         Button buttonMonster;
@@ -98,4 +98,3 @@ public class MusicaActivity extends AppCompatActivity {
         }
 
     }
-}

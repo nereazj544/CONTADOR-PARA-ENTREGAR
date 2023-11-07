@@ -18,9 +18,7 @@
         <activity
             android:name=".Fondo.FondoActivity"
             android:exported="false" />
-        <activity
-            android:name=".Fondo.MainActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Musica.MusicaActivity"
             android:exported="false" />
