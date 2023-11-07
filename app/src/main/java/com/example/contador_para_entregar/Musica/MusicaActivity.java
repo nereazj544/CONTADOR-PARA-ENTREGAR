@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.contador_para_entregar.InformacionActivity;
 import com.example.contador_para_entregar.OpticonsActivity;
@@ -20,69 +21,81 @@ public class MusicaActivity extends AppCompatActivity {
         Button buttonMonster;
         Button buttonLol;
 
-        // Declarar variable para el reproductor de música
-        private MediaPlayer mediaPlayer;
+        MediaPlayer player;
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_musica);
+            buttonIE = (Button) findViewById(R.id.ie);
+            buttonMonster = (Button) findViewById(R.id.monster);
+            buttonLol = (Button) findViewById(R.id.lol);
 
-
-            // Obtener referencias a los botones
-            buttonIE = findViewById(R.id.ie);
-            buttonMonster = findViewById(R.id.monster);
-            buttonLol = findViewById(R.id.lol);
-
-            // Asignar OnClickListener a los botones
-            buttonIE.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Reproducir música correspondiente al botón "IE"
-                    playMusic(R.raw.ieopg);
-                }
-            });
-
-            buttonMonster.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Reproducir música correspondiente al botón "Monster"
-                    playMusic(R.raw.monsterhigh);
-                }
-            });
-
-            buttonLol.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Reproducir música correspondiente al botón "LOL"
-                    playMusic(R.raw.paranoia);
-                }
-            });
         }
 
-        // Método para reproducir música
-        private void playMusic(int musicResId) {
-            // Detener la reproducción si ya se está reproduciendo música
-            stopMusic();
+        public void ie(View v) {
+            if (player == null) {
+                player = MediaPlayer.create(this, R.raw.ieopg);
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        stopPlayer();
+                    }
+                });
+            }
 
-            // Crear y configurar el reproductor de música
-            mediaPlayer = MediaPlayer.create(this, musicResId);
-            mediaPlayer.start(); // Iniciar la reproducción
+            player.start();
         }
+        public void monster(View v) {
+            if (player == null) {
+                player = MediaPlayer.create(this, R.raw.monsterhigh);
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        stopPlayer();
+                    }
+                });
+            }
 
-        // Método para detener la reproducción de música
-        private void stopMusic() {
-            if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-                mediaPlayer.stop(); // Detener la reproducción
-                mediaPlayer.release(); // Liberar recursos
-                mediaPlayer = null;
+            player.start();
+        }
+        public void lol(View v) {
+            if (player == null) {
+                player = MediaPlayer.create(this, R.raw.paranoia);
+                player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        stopPlayer();
+                    }
+                });
+            }
+
+            player.start();
+        }
+        public void pause(View v) {
+            if (player != null) {
+                player.pause();
             }
         }
 
-        public  void  atras(View v){
-            Intent at = new Intent(this, OpticonsActivity.class);
-            startActivity(at);
+        public void stop(View v) {
+            stopPlayer();
         }
-    }
 
+        private void stopPlayer() {
+            if (player != null) {
+                player.release();
+                player = null;
+                Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        @Override
+        protected void onStop() {
+            super.onStop();
+            stopPlayer();
+        }
+
+    }
 }

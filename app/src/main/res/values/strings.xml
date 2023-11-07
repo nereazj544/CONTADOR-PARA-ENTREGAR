@@ -50,6 +50,9 @@
     <string name="ie">Inazuma Eleven</string>
     <string name="lol">Paranoia (LoL)</string>
 
+    <string name="pas">Pausar</string>
+    <string name="stop">Stop</string>
+
 
     <!--COMENTARIO BASE-->
 </resources>
