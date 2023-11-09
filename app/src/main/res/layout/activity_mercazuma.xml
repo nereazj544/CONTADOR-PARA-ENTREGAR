@@ -56,7 +56,7 @@
         android:id="@+id/tituloac"
         android:layout_width="377dp"
         android:layout_height="46dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="388dp"
         android:text="@string/ac"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -72,31 +72,32 @@
         android:layout_width="232dp"
         android:layout_height="57dp"
         android:backgroundTint="@color/gris_azul"
+        android:onClick="autoclick"
         android:text="@string/autoclick"
         android:textColor="@color/black"
-        android:onClick="autoclick"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloac"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="391dp"
-        android:layout_height="62dp"
-        android:orientation="horizontal"
+        android:layout_width="243dp"
+        android:layout_height="133dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulomb"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintVertical_bias="0.025">
 
         <Button
             android:id="@+id/aumentar"
-            android:layout_width="wrap_content"
+            android:layout_width="196dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/xavier"
@@ -107,7 +108,7 @@
 
         <Button
             android:id="@+id/multiply"
-            android:layout_width="wrap_content"
+            android:layout_width="196dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/shawn"
@@ -119,41 +120,32 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="69dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@drawable/aurora" />
-
-    <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="69dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="133dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298"
         app:srcCompat="@drawable/loboaullido" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="148dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/vol"
-        android:textStyle="bold"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="@android:color/transparent"
         android:onClick="volver"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/white"
+        android:text="@string/vol"
+        android:textColor="@color/xavier"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

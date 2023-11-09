@@ -64,9 +64,10 @@ public class MainActivity extends ListActivity implements AdapterView.OnItemClic
 
         PersonajeAdapter adapter = new PersonajeAdapter(this, R.layout.listapersonaje, Arrays.asList(personajes));
 
-
       ListView listView = findViewById(R.id.list);
       listView.setAdapter(adapter = new PersonajeAdapter(this, R.layout.listapersonaje, Arrays.asList(personajes)));
+
+
 
     }
 

@@ -14,14 +14,20 @@
     <string name="atras">Atrás</string>
 
     <!--BOTONES DE MEJORA-->
-    <string name="multiplicador">Aumenta Coste: 100</string>
+    <string name="multiplicador">Multiplicador Coste: 100</string>
     <string name="clicks">Aumenta Coste: 100</string>
     <string name="autoclick">AutoClick Coste: 10</string>
 
     <!--iNFORMACION-->
-    <string name="menti">Te mentí no es información sobre el Click por aburrimiento :)</string>
+    <string name="menti">Click por aburrimiento :)</string>
     <string name="equipos">Equipos de la saga Inazuma Eleven</string>
     <string name="personajes">Personajes de la saga Inazuma Eleven</string>
+    <string name="info">Bienvenido a la informacion, aqui tienes la informacion del juego,
+        tendras un boton donde clickar para conseguir ""goles"" y luego esos ""goles"", cangearlos por recompesas.
+        En el juego propio tienes un ranking (actualmente no funciona)</string>
+
+
+
     <!--EQUIPOS-->
     <string name="equipo_rec">Lista de los equipos</string>
     <string name="personajes_list">Lista de (algunos) personajes</string>'
@@ -29,7 +35,7 @@
     <!--Mercazuma-->
     <string name="titulo_m">Mercazuma</string>
     <string name="des_mercazuma">Gasta aquí tus puntos de pasion y amistad</string>
-    <string name="mb">Supertecnicas de tiro: Aullido de Lobo y La Aurora</string>
+    <string name="mb">Supertecnicas de tiro: Aullido de Lobo</string>
     <string name="ac">Supertecnica: Carrera Relámpago</string>
     <string name="vol">Volver al juego</string>
     <string name="contadorclicks">Tus puntos de Pasión y Amistad: </string>
