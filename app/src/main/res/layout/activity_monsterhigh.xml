@@ -32,7 +32,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/mh"
-        android:text="Button"
+        android:text="@string/mhp"
         android:textSize="30dp"
         android:textStyle="bold"
         android:onClick="mhlista"
@@ -41,6 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.129"
-        tools:text="@string/mhp" />
+       />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

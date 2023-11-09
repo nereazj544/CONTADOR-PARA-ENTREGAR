@@ -141,7 +141,7 @@
         android:backgroundTint="@android:color/transparent"
         android:onClick="volver"
         android:text="@string/vol"
-        android:textColor="@color/xavier"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
