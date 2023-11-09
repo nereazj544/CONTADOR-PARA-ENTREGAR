@@ -106,12 +106,13 @@ public class MainActivity extends AppCompatActivity {
         //paso de mejoras a la tienda
         datum.putString("data", num.toString());
 
-        datum.putString("valor", valor.toString());
+
+/*      datum.putString("valor", valor.toString());
         datum.putString("costo", costo.toString());
         datum.putString("costo_mu", costo_multiplicacion.toString());
         datum.putString("AClik", ACcost.toString());
         datum.putInt("auto", automatico);
-
+         */
         mercazuma.putExtras(datum);
         launcher.launch(mercazuma);
     }
@@ -185,13 +186,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
-    /* //RESET
-    public void rest(View v){
-        num = new BigInteger("0");
-        contador.setText(num.toString());
-        contador.setTextColor(Color.WHITE);
-    }*/
 
 //AUTOCLICK
     public  void autoclick(View v){
