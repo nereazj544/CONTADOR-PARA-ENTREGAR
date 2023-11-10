@@ -35,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
                     num = new BigInteger(result.getData().getStringExtra("num"));
                     valor =  new BigInteger(result.getData().getStringExtra("valor"));
                 }
-            }
 
             }
-        });
+
+        }
+    });
     TextView contador;
     Button boton;
     Button boton_multiplicacion;
@@ -46,18 +47,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView Kariya_Kirino;
     Button boton_AutoClick;
     int auto = 1;
-    //Para un valor concreto: int num = 95;
-    //Y despues en el protected void se pone: contador.setText(""+num);
-
-    /* //Esto es con Int:
-    int num = 999; int valor=1; int costo= 100; int costo_multiplicacion=1000;
-    */
-    //Esto es con BigInteger
     BigInteger num = BigInteger.ZERO;
     BigInteger valor = BigInteger.ONE;
-    BigInteger costo = new BigInteger("100");
+    BigInteger costo = new BigInteger("10");
     BigInteger costo_multiplicacion = new BigInteger("1000");
-    /*Para no complicarse la vida con los ceros :) */
     BigInteger mil = new BigInteger("1000");
     BigInteger millon = new BigInteger("1000000");
     BigInteger billon = new BigInteger("1000000000");
@@ -90,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 Alerta();
             }
         });
-
+/*
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if (result.getResultCode() == RESULT_OK){
@@ -100,9 +93,12 @@ public class MainActivity extends AppCompatActivity {
                             contador.setText(newData);
                         }
                     }
-                });{
+                });
 
-        }
+ */
+
+
+
 
     }
 
@@ -123,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         //datum.putString("data", num.toString());
 
         mercazuma.putExtra("num",num.toString());
+        mercazuma.putExtra("costo", costo.toString());
         mercazuma.putExtra("valor",valor.toString());
 /*      datum.putString("valor", valor.toString());
         datum.putString("costo", costo.toString());
@@ -130,10 +127,10 @@ public class MainActivity extends AppCompatActivity {
         datum.putString("AClik", ACcost.toString());
         datum.putInt("auto", automatico);
          */
-       // mercazuma.putExtras(datum);
+        // mercazuma.putExtras(datum);
         startForResult.launch(mercazuma);
 
-       launcher.launch(mercazuma);
+        // launcher.launch(mercazuma);
     }
 
 
@@ -188,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mejora(View v) {
-        if (num.compareTo(new BigInteger("100")) >= 0) {
+        if (num.compareTo(new BigInteger("10")) >= 0) {
             num = num.subtract(costo);
             valor = valor.add(new BigInteger("1"));
             contador.setText(NumeroFormato(num));
@@ -206,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//AUTOCLICK
+    //AUTOCLICK
     public  void autoclick(View v){
         if (num.compareTo(new BigInteger("10")) >= 0){
             num = num.subtract(new BigInteger("10"));
@@ -269,7 +266,3 @@ public class MainActivity extends AppCompatActivity {
 
     //END APP
 }
-
-
-
-
