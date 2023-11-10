@@ -1,5 +1,7 @@
 package com.example.contador_para_entregar;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
@@ -23,6 +25,20 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityResultLauncher<Intent> startForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if (result != null && result.getResultCode() == RESULT_OK) {
+                // añadir el settext del contador
+                if (result.getData() != null && result.getData().getStringExtra("num") != null) {
+                    num = new BigInteger(result.getData().getStringExtra("num"));
+                    valor =  new BigInteger(result.getData().getStringExtra("valor"));
+                }
+            }
+
+            }
+        });
     TextView contador;
     Button boton;
     Button boton_multiplicacion;
@@ -101,20 +117,23 @@ public class MainActivity extends AppCompatActivity {
     //MERCAZUMA
     public  void  shop(View v){
         Intent mercazuma = new Intent(this, MercazumaActivity.class);
-        Bundle datum = new Bundle();
+        //Bundle datum = new Bundle();
 
         //paso de mejoras a la tienda
-        datum.putString("data", num.toString());
+        //datum.putString("data", num.toString());
 
-
+        mercazuma.putExtra("num",num.toString());
+        mercazuma.putExtra("valor",valor.toString());
 /*      datum.putString("valor", valor.toString());
         datum.putString("costo", costo.toString());
         datum.putString("costo_mu", costo_multiplicacion.toString());
         datum.putString("AClik", ACcost.toString());
         datum.putInt("auto", automatico);
          */
-        mercazuma.putExtras(datum);
-        launcher.launch(mercazuma);
+       // mercazuma.putExtras(datum);
+        startForResult.launch(mercazuma);
+
+       launcher.launch(mercazuma);
     }
 
 

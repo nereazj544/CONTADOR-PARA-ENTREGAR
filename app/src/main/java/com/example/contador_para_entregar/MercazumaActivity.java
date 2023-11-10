@@ -54,11 +54,11 @@ public class MercazumaActivity extends AppCompatActivity {
         numerocont = (TextView) findViewById(R.id.puntosclicks);
 
 
-       if (datum != null){
-           //Datos que se recogeran de la base de datos interna del dispositivo.
-           String numero = datum.getString("data");
-           numerocont.setText("Tus puntos de Pasión y Amistad: " + numero);
-           ocu.setText(numero); //Esto es para que pase en numero de que realmente se tiene.
+        if (datum != null){
+            //Datos que se recogeran de la base de datos interna del dispositivo.
+            String numero = datum.getString("data");
+            numerocont.setText("Tus puntos de Pasión y Amistad: " + numero);
+            ocu.setText(numero); //Esto es para que pase en numero de que realmente se tiene.
 
 
            /*
@@ -74,7 +74,7 @@ public class MercazumaActivity extends AppCompatActivity {
            BigInteger costoM = new BigInteger(cotoTM);
            int ACost = Integer.parseInt(AcostT);
            */
-       }
+        }
     }
 
     public void volver(View v){
@@ -84,8 +84,4 @@ public class MercazumaActivity extends AppCompatActivity {
         finish();
     }
 
-
-
-
-    //END APP
 }
