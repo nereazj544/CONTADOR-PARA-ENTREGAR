@@ -19,4 +19,15 @@
 
     <color name="fondo">#71E0F8</color>
     <color name="mh">#FF340319</color>
+
+
+    <!--Colores del longin -->
+    <color name="azulclaro">#93DBD9</color>
+    <color name="naranaja">#D95E32</color>
+    <color name="azulos">#225459</color>
+    <color name="ns">#D9C771</color>
+    <color name="grisoscuro">#737373</color>
+    <color name="grisns">#90262626</color>
+    <color name="gris">#A6A6A6</color>
+    <color name="whiteclaro">#79E9F2F1</color>
 </resources>

@@ -59,11 +59,13 @@
     <string name="stop">Stop</string>
 
     <!--INICIAR SESION CUENTAS-->
+
     <string name="nu">Nombre Usuario</string>
     <string name="con">Contraseña</string>
     <string name="conf">Confrima contraseña</string>
     <string name="reg">Registrarse</string>
     <string name="in">Iniciar Sesion</string>
+    <string name="pre">¿Ya tienes una cuenta?</string>
 
 
     <!--COMENTARIO BASE-->

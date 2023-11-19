@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.InicarSesion"  android:background="@drawable/theearth">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="235dp"
+            android:padding="20dp"
+            android:background="@drawable/borde"
+            >
+
+            <EditText
+                android:layout_marginTop="40dp"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/name_user"
+                android:hint="@string/nu"
+                android:textColorHint="@color/white"
+
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:id="@+id/contra"
+                android:hint="@string/con"
+                android:textColorHint="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                />
+            <Button
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:text="@string/in"
+                android:id="@+id/iniciar"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/whiteclaro"
+                android:layout_marginTop="40dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/pre"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
