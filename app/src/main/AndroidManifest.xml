@@ -13,12 +13,14 @@
         android:theme="@style/Theme.CONTADORPARAENTREGAR"
         tools:targetApi="31">
         <activity
+            android:name=".Login.Login"
+            android:exported="false" />
+        <activity
             android:name=".MH.RecylcerMonsterHigh.MonsterHighRecycler"
             android:exported="false" />
         <activity
             android:name=".Fondo.FondoActivity"
             android:exported="false" />
-
         <activity
             android:name=".Musica.MusicaActivity"
             android:exported="false" />

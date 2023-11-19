@@ -27,7 +27,6 @@
         En el juego propio tienes un ranking (actualmente no funciona)</string>
 
 
-
     <!--EQUIPOS-->
     <string name="equipo_rec">Lista de los equipos</string>
     <string name="personajes_list">Lista de (algunos) personajes</string>'
@@ -58,6 +57,13 @@
 
     <string name="pas">Pausar</string>
     <string name="stop">Stop</string>
+
+    <!--INICIAR SESION CUENTAS-->
+    <string name="nu">Nombre Usuario</string>
+    <string name="con">Contraseña</string>
+    <string name="conf">Confrima contraseña</string>
+    <string name="reg">Registrarse</string>
+    <string name="in">Iniciar Sesion</string>
 
 
     <!--COMENTARIO BASE-->

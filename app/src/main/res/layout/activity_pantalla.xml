@@ -123,4 +123,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.061" />
 
+    <Button
+        android:id="@+id/linng"
+        android:layout_width="239dp"
+        android:layout_height="51dp"
+        android:text="Registrate"
+        android:onClick="ling"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/rosa_palido"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.784" />
+
+    <Button
+        android:id="@+id/linng2"
+        android:layout_width="239dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/rosa_palido"
+        android:onClick="iniciar"
+        android:text="Iniciar Sesion"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.863" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
