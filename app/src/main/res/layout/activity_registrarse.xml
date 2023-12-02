@@ -50,16 +50,16 @@
             />
 
         <TextView
+            android:id="@+id/nocuent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/pre"
-            android:textColor="@color/white"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:textStyle="bold"
+            android:onClick="nocuenta"
+            android:text="@string/pr"
+            android:textColor="@color/white"
             android:textSize="20dp"
-            android:onClick="cuenta"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

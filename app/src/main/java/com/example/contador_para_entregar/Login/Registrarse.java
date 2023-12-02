@@ -17,13 +17,9 @@ public class Registrarse extends AppCompatActivity {
         setContentView(R.layout.activity_registrarse);
     }
 
-
-
-
-
     public  void  cuenta(View v){
         //Esto va a ir a la otra pantalla
-        Intent in = new Intent(this, InicarSesion.class);
+        Intent in = new Intent(this, MainActivityLogin.class);
         startActivity(in);
         finish();
     }
@@ -33,4 +29,8 @@ public class Registrarse extends AppCompatActivity {
         startActivity(log);
         finish();
     }
+
+
+
+  
 }
