@@ -25,8 +25,8 @@ public class MainActivityLogin extends AppCompatActivity {
         incontra = (EditText) findViewById(R.id.contra);
 
         final Database_Helper DBhelper = new Database_Helper(this);
-        //M#@RD4 PARA ESTE THIS DE LOS C#@*N7S
-        
+
+
         insesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,10 +42,9 @@ public class MainActivityLogin extends AppCompatActivity {
                         "Bienvenido a la App"  + newRowId,
                         Toast.LENGTH_SHORT).show();
             }
-            }
         });
+}
 
-    }
 
 
 

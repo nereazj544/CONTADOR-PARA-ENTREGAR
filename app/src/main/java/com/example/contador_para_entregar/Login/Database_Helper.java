@@ -9,10 +9,8 @@ import androidx.annotation.Nullable;
 public class Database_Helper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1; //vesrion de la Database
     public static final String DATABASE_NAME = "usuarios.db"; //nombre de la base
-    public Database_Helper(@Nullable Context context, @Nullable String name, 
-                           @Nullable SQLiteDatabase.CursorFactory factory, 
-                           int version) {
-        super(context, name, factory, version);
+    public Database_Helper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
 
