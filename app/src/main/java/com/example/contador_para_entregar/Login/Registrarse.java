@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.contador_para_entregar.MainActivity;
 import com.example.contador_para_entregar.PantallaActivity;
 import com.example.contador_para_entregar.R;
 
@@ -45,7 +47,8 @@ public class Registrarse extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),
                         "Usuario registrado" + newRowld, Toast.LENGTH_SHORT).show();
 
-                reuser.setBackgroundColor(getResources().getColor(R.color.white));
+                reuser.setTextColor(Color.WHITE);
+                recontra.setTextColor(Color.WHITE);
             }
         });
 
@@ -59,6 +62,12 @@ public class Registrarse extends AppCompatActivity {
         //Para ir a la iniciar sesion de la cuenta.
         Intent in = new Intent(this, MainActivityLogin.class);
         startActivity(in);
+        finish();
+    }
+
+    public void iniciar(View v){
+        Intent inicar = new Intent(this, MainActivity.class);
+        startActivity(inicar);
         finish();
     }
 

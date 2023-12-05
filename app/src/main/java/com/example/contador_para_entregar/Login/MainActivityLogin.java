@@ -33,7 +33,7 @@ public class MainActivityLogin extends AppCompatActivity {
                 SQLiteDatabase db = DBhelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
                 values.put(Database_estrucute.FeedEntry.CAMPO2, inusuario.getText().toString());
-                values.put(Database_estrucute.FeedEntry.CAMPO3, inusuario.getText().toString());
+                values.put(Database_estrucute.FeedEntry.CAMPO3, incontra.getText().toString());
 
                 long newRowId = db.insert(Database_estrucute.FeedEntry.TB_NAME,
                         null, values);
@@ -58,5 +58,7 @@ public class MainActivityLogin extends AppCompatActivity {
         startActivity(nocuenta);
         finish();
     }
+
+
 
 }
