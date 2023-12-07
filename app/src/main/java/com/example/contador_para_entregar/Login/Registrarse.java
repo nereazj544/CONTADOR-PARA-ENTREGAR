@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.contador_para_entregar.MainActivity;
+
 import com.example.contador_para_entregar.PantallaActivity;
 import com.example.contador_para_entregar.R;
 
@@ -53,8 +53,8 @@ public class Registrarse extends AppCompatActivity {
                                 "CAMPOS SIN RELLENAR",
                                 Toast.LENGTH_SHORT).show();
                     }else {
-                        if (contra.equals(reContra)){
-                            if(DBhelper.OkUser(user)){
+                        if (contra.equals(reContra)) {
+                            if (DBhelper.OkUser(user)) {
                                 Toast.makeText(Registrarse.this,
                                         "Usuario existente",
                                         Toast.LENGTH_SHORT).show();
@@ -62,11 +62,15 @@ public class Registrarse extends AppCompatActivity {
                             }
 
                             boolean registro = DBhelper.insertarDatos(user, contra);
-                            if(registro)
+                            if (registro){
                                 Toast.makeText(Registrarse.this,
                                         "Te hemos hakeado el telefono :)",
                                         Toast.LENGTH_SHORT).show();
-                                else
+
+                            Intent jugar = new Intent(Registrarse.this, PantallaActivity.class);
+                            startActivity(jugar);
+
+                            }else
                                 Toast.makeText(Registrarse.this,
                                         "Usuario no registrado",
                                         Toast.LENGTH_SHORT).show();
@@ -93,7 +97,10 @@ public class Registrarse extends AppCompatActivity {
             }
         });
 
-    }
+
+
+
+    }//END onCreate
 
 
 
@@ -105,19 +112,4 @@ public class Registrarse extends AppCompatActivity {
         startActivity(in);
         finish();
     }
-
-    /*
-    public void iniciar(View v){
-        Intent inicar = new Intent(this, MainActivity.class);
-        startActivity(inicar);
-        finish();
-    }
-
-     */
-
-
-
-
-
-  
-}
+} //END ACTIVITY

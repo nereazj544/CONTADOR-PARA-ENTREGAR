@@ -50,7 +50,18 @@ public class Database_Helper extends SQLiteOpenHelper {
         else return false;
     }
 
+public boolean OkyUserLongin (String user, String contra){
+    SQLiteDatabase db = this.getWritableDatabase();
+    Cursor cursor = db.rawQuery(
+            "select * from usuarios where nombre_de_usuario = ? and " +
+                    "contraseña = ?", new String[]{user, contra}
+    );
 
+
+        if (cursor.getCount() > 0)
+        return true;
+    else return false;
+}
 
 
 }//END ACTIVITY
