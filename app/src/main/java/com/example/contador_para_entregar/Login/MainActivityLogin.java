@@ -3,6 +3,7 @@ package com.example.contador_para_entregar.Login;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,23 +25,20 @@ public class MainActivityLogin extends AppCompatActivity {
         inusuario = (EditText) findViewById(R.id.name_user);
         incontra = (EditText) findViewById(R.id.contra);
 
+
+        //CAMBIO DE COLOR
+        insesion.setTextColor(Color.WHITE);
+        incontra.setTextColor(Color.WHITE);
+
+
+
         final Database_Helper DBhelper = new Database_Helper(this);
 
 
         insesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase db = DBhelper.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(Database_estrucute.FeedEntry.CAMPO2, inusuario.getText().toString());
-                values.put(Database_estrucute.FeedEntry.CAMPO3, incontra.getText().toString());
 
-                long newRowId = db.insert(Database_estrucute.FeedEntry.TB_NAME,
-                        null, values);
-
-                Toast.makeText(getApplicationContext(),
-                        "Bienvenido a la App"  + newRowId,
-                        Toast.LENGTH_SHORT).show();
             }
         });
 }

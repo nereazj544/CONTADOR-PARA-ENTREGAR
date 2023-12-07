@@ -20,7 +20,7 @@ import com.example.contador_para_entregar.R;
 public class Registrarse extends AppCompatActivity {
 
     Button resesion;
-    EditText reuser, recontra;
+    EditText reuser, recontra, reecontra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +28,68 @@ public class Registrarse extends AppCompatActivity {
         setContentView(R.layout.activity_registrarse);
 
         recontra = (EditText) findViewById(R.id.contra);
+        reecontra = (EditText) findViewById(R.id.contraf);
         reuser = (EditText) findViewById(R.id.name_user);
         resesion = (Button) findViewById(R.id.iniciar);
 
-        final Database_Helper dbHelper = new Database_Helper(this);
+        final Database_Helper DBhelper = new Database_Helper(this);
+
+        //CAMBIO DE COLOR
+        reuser.setTextColor(Color.WHITE);
+        recontra.setTextColor(Color.WHITE);
+        reecontra.setTextColor(Color.WHITE);
 
         resesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                ContentValues  values = new ContentValues();
-                values.put(Database_estrucute.FeedEntry.CAMPO2,reuser.getText().toString());
-                values.put(Database_estrucute.FeedEntry.CAMPO3,recontra.getText().toString());
+                    String user, contra, reContra;
+                    user = reuser.getText().toString();
+                    contra = recontra.getText().toString();
+                    reContra = reecontra.getText().toString();
 
-                long newRowld = db.insert(Database_estrucute.FeedEntry.TB_NAME,
+                    if (user.equals("") ||
+                    contra.equals("") || reContra.equals("")){
+                        Toast.makeText(Registrarse.this,
+                                "CAMPOS SIN RELLENAR",
+                                Toast.LENGTH_SHORT).show();
+                    }else {
+                        if (contra.equals(reContra)){
+                            if(DBhelper.OkUser(user)){
+                                Toast.makeText(Registrarse.this,
+                                        "Usuario existente",
+                                        Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+
+                            boolean registro = DBhelper.insertarDatos(user, contra);
+                            if(registro)
+                                Toast.makeText(Registrarse.this,
+                                        "Te hemos hakeado el telefono :)",
+                                        Toast.LENGTH_SHORT).show();
+                                else
+                                Toast.makeText(Registrarse.this,
+                                        "Usuario no registrado",
+                                        Toast.LENGTH_SHORT).show();
+
+                        }
+                        else {
+                            Toast.makeText(Registrarse.this,
+                                    "NO COINCIDEN CONTRASEÑAS",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                /*
+                SQLiteDatabase db = DBhelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(Database_estrucute.FeedEntry.CAMPO1id, reuser.getText().toString());
+                values.put(Database_estrucute.FeedEntry.CAMPO2, recontra.getText().toString());
+
+                long newRowId = db.insert(Database_estrucute.FeedEntry.TB_NAME,
                         null, values);
 
-                Toast.makeText(getApplicationContext(),
-                        "Usuario registrado" + newRowld, Toast.LENGTH_SHORT).show();
 
-                reuser.setTextColor(Color.WHITE);
-                recontra.setTextColor(Color.WHITE);
+                 */
+
             }
         });
 
@@ -65,11 +106,14 @@ public class Registrarse extends AppCompatActivity {
         finish();
     }
 
+    /*
     public void iniciar(View v){
         Intent inicar = new Intent(this, MainActivity.class);
         startActivity(inicar);
         finish();
     }
+
+     */
 
 
 
