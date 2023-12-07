@@ -65,7 +65,7 @@ public class MainActivityLogin extends AppCompatActivity {
         //Esto va a ir a la otra pantalla
         Intent nocuenta = new Intent(this, Registrarse.class);
         startActivity(nocuenta);
-        finish();
+
     }
 
 
