@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.contador_para_entregar.MainActivity;
 import com.example.contador_para_entregar.R;
 
 public class MainActivityLogin extends AppCompatActivity {
@@ -39,20 +38,10 @@ public class MainActivityLogin extends AppCompatActivity {
         insesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean estaLogeado = DBhelper.OkyUserLongin(insesion.getText().toString(),
-                        incontra.getText().toString());
 
-                if (estaLogeado){
-                    Intent jugar = new Intent(MainActivityLogin.this, MainActivity.class);
-                    startActivity(jugar);
-                } else {
-                    Toast.makeText(MainActivityLogin.this,
-                            "Fallo en el sistema",
-                            Toast.LENGTH_SHORT).show();
-                }
             }
         });
-}
+    }
 
 
 
@@ -65,7 +54,7 @@ public class MainActivityLogin extends AppCompatActivity {
         //Esto va a ir a la otra pantalla
         Intent nocuenta = new Intent(this, Registrarse.class);
         startActivity(nocuenta);
-
+        finish();
     }
 
 

@@ -24,17 +24,17 @@ public class Database_Helper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    db.execSQL(Database_estrucute.SQL_DELETE);
-    onCreate(db);
+        db.execSQL(Database_estrucute.SQL_DELETE);
+        onCreate(db);
     }
 
     public boolean insertarDatos(String user,String contra) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("user", user);
+        values.put("nombre", user);
         values.put("contra", contra);
 
-        long result = db.insert("user", null, values);
+        long result = db.insert("Usuarios", null, values);
         if (result == -1) return  false;
         else return true;
 
@@ -50,18 +50,7 @@ public class Database_Helper extends SQLiteOpenHelper {
         else return false;
     }
 
-public boolean OkyUserLongin (String user, String contra){
-    SQLiteDatabase db = this.getWritableDatabase();
-    Cursor cursor = db.rawQuery(
-            "select * from usuarios where nombre_de_usuario = ? and " +
-                    "contraseña = ?", new String[]{user, contra}
-    );
 
-
-        if (cursor.getCount() > 0)
-        return true;
-    else return false;
-}
 
 
 }//END ACTIVITY

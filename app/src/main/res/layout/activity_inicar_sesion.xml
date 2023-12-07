@@ -55,7 +55,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
-                    android:onClick="nocuenta"
+                    android:onClick="nc"
                     android:text="@string/pr"
                     android:textColor="@color/white"
                     android:textSize="20dp"

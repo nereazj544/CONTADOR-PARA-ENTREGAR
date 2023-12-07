@@ -2,7 +2,6 @@ package com.example.contador_para_entregar.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,16 +13,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
+import com.example.contador_para_entregar.MainActivity;
 import com.example.contador_para_entregar.PantallaActivity;
 import com.example.contador_para_entregar.R;
 
 public class Registrarse extends AppCompatActivity {
 
-    Button resesion, registrarse;
+    Button resesion;
     EditText reuser, recontra, reecontra;
 
-    @SuppressLint({"ResourceType", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +30,7 @@ public class Registrarse extends AppCompatActivity {
         recontra = (EditText) findViewById(R.id.contra);
         reecontra = (EditText) findViewById(R.id.contraf);
         reuser = (EditText) findViewById(R.id.name_user);
-        registrarse = (Button) findViewById(R.id.reg);
+        resesion = (Button) findViewById(R.id.iniciar);
 
         final Database_Helper DBhelper = new Database_Helper(this);
 
@@ -41,61 +39,45 @@ public class Registrarse extends AppCompatActivity {
         recontra.setTextColor(Color.WHITE);
         reecontra.setTextColor(Color.WHITE);
 
-        //Inicar sesion
         resesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent jugar = new Intent(Registrarse.this, PantallaActivity.class);
-                startActivity(jugar);
-            }
-        });
+                String user, contra, reContra;
+                user = reuser.getText().toString();
+                contra = recontra.getText().toString();
+                reContra = reecontra.getText().toString();
 
-
-
-        //REGISTRARSE
-        registrarse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    String user, contra, reContra;
-                    user = reuser.getText().toString();
-                    contra = recontra.getText().toString();
-                    reContra = reecontra.getText().toString();
-
-                    if (user.equals("") ||
-                    contra.equals("") || reContra.equals("")){
-                        Toast.makeText(Registrarse.this,
-                                "CAMPOS SIN RELLENAR",
-                                Toast.LENGTH_SHORT).show();
-                    }else {
-                        if (contra.equals(reContra)) {
-                            if (DBhelper.OkUser(user)) {
-                                Toast.makeText(Registrarse.this,
-                                        "Usuario existente",
-                                        Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-
-                            boolean registro = DBhelper.insertarDatos(user, contra);
-                            if (registro){
-                                Toast.makeText(Registrarse.this,
-                                        "Te hemos hakeado el telefono :)",
-                                        Toast.LENGTH_SHORT).show();
-                                /*Intent longi = new Intent(Registrarse.this, MainActivityLogin.class);
-                                startActivity(longi);
-
-                                 */
-                            }else
-                                Toast.makeText(Registrarse.this,
-                                        "Usuario no registrado",
-                                        Toast.LENGTH_SHORT).show();
-
-                        }
-                        else {
+                if (user.equals("") ||
+                        contra.equals("") || reContra.equals("")){
+                    Toast.makeText(Registrarse.this,
+                            "CAMPOS SIN RELLENAR",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    if (contra.equals(reContra)){
+                        if(DBhelper.OkUser(user)){
                             Toast.makeText(Registrarse.this,
-                                    "NO COINCIDEN CONTRASEÑAS",
+                                    "Usuario existente",
                                     Toast.LENGTH_SHORT).show();
+                            return;
                         }
+
+                        boolean registro = DBhelper.insertarDatos(user, contra);
+                        if(registro)
+                            Toast.makeText(Registrarse.this,
+                                    "Te hemos hakeado el telefono :)",
+                                    Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(Registrarse.this,
+                                    "Usuario no registrado",
+                                    Toast.LENGTH_SHORT).show();
+
                     }
+                    else {
+                        Toast.makeText(Registrarse.this,
+                                "NO COINCIDEN CONTRASEÑAS",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
                 /*
                 SQLiteDatabase db = DBhelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
@@ -111,10 +93,7 @@ public class Registrarse extends AppCompatActivity {
             }
         });
 
-
-
-
-    }//END onCreate
+    }
 
 
 
@@ -126,4 +105,14 @@ public class Registrarse extends AppCompatActivity {
         startActivity(in);
         finish();
     }
-} //END ACTIVITY
+
+    /*
+    public void iniciar(View v){
+        Intent inicar = new Intent(this, MainActivity.class);
+        startActivity(inicar);
+        finish();
+    }
+
+     */
+
+}
