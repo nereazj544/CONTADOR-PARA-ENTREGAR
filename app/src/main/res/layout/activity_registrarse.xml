@@ -37,30 +37,28 @@
             />
 
         <EditText
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:id="@+id/contraf"
-        android:hint="@string/conf"
-        android:textColorHint="@color/white"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        />
-
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:id="@+id/contraf"
+            android:hint="@string/conf"
+            android:textColorHint="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            />
 
         <Button
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:text="@string/reg"
-            android:id="@+id/reg"
+            android:text="@string/in"
+            android:id="@+id/iniciar"
             android:textColor="@color/black"
             android:backgroundTint="@color/whiteclaro"
             android:layout_marginTop="40dp"
             android:textStyle="bold"
             android:layout_gravity="center"
+            android:onClick="inicar"
             />
-
-
 
         <TextView
             android:id="@+id/nocuent"
@@ -69,7 +67,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:onClick="nocuenta"
-            android:text="@string/pre"
+            android:text="@string/pr"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />

@@ -31,10 +31,10 @@ public class Database_Helper extends SQLiteOpenHelper {
     public boolean insertarDatos(String user,String contra) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("nombre", user);
+        values.put("user", user);
         values.put("contra", contra);
 
-        long result = db.insert("Usuarios", null, values);
+        long result = db.insert("user", null, values);
         if (result == -1) return  false;
         else return true;
 

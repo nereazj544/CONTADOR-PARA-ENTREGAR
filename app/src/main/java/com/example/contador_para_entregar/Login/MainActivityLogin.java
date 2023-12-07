@@ -27,7 +27,7 @@ public class MainActivityLogin extends AppCompatActivity {
 
 
         //CAMBIO DE COLOR
-        insesion.setTextColor(Color.WHITE);
+        inusuario.setTextColor(Color.WHITE);
         incontra.setTextColor(Color.WHITE);
 
 
@@ -35,12 +35,14 @@ public class MainActivityLogin extends AppCompatActivity {
         final Database_Helper DBhelper = new Database_Helper(this);
 
 
-        insesion.setOnClickListener(new View.OnClickListener() {
+        /*insesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
+
+         */
     }
 
 
