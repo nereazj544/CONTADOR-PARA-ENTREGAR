@@ -66,8 +66,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:onClick="iniciar"
-            android:text="@string/pre"
+              android:text="@string/pre"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />

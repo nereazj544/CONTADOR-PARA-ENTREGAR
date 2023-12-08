@@ -1,6 +1,7 @@
 package com.example.contador_para_entregar.Login;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +24,7 @@ public class Register extends AppCompatActivity {
     //EditText
     EditText user, pass, repass;
     DBhelper DBhelper;
-
+    TextView loggin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class Register extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.contra);
         repass = (EditText) findViewById(R.id.contraf);
         btnRegis = (Button) findViewById(R.id.register);
+        loggin = findViewById(R.id.login);
 
         final DBhelper DBhelper = new DBhelper(this);
 
@@ -40,6 +43,20 @@ public class Register extends AppCompatActivity {
         user.setTextColor(Color.WHITE);
         pass.setTextColor(Color.WHITE);
         repass.setTextColor(Color.WHITE);
+
+        //Texto a la escucha
+        loggin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, MainActivityLogin.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
 
         //Boton a la escucha
         btnRegis.setOnClickListener(new View.OnClickListener() {
@@ -50,13 +67,13 @@ public class Register extends AppCompatActivity {
                 Pass = pass.getText().toString();
                 RePass = repass.getText().toString();
 
-                if (user.equals("") ||
-                        pass.equals("") || repass.equals("")){
+                if (User.equals("") ||
+                        Pass.equals("") || RePass.equals("")){
                     Toast.makeText(Register.this,
                             "CAMPOS SIN RELLENAR",
                             Toast.LENGTH_SHORT).show();
                 }else {
-                    if (pass.equals(repass)) {
+                    if (Pass.equals(RePass)) {
                         if (DBhelper.OkUser(User)) {
                             Toast.makeText(Register.this,
                                     "Usuario existente",
