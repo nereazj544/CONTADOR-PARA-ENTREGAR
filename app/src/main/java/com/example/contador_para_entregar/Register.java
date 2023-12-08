@@ -35,6 +35,8 @@ public class Register extends AppCompatActivity {
         btnRegis = (Button) findViewById(R.id.register);
         loggin = findViewById(R.id.login);
 
+        dBhelper = new DBhelper(this);
+
 
 
 
