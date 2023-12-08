@@ -56,10 +56,6 @@ public class Register extends AppCompatActivity {
         });
 
 
-
-
-
-
         //Boton a la escucha
         btnRegis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,30 +65,22 @@ public class Register extends AppCompatActivity {
                 Pass = pass.getText().toString();
                 RePass = repass.getText().toString();
 
-                if (User.equals("") ||
-                        Pass.equals("") || RePass.equals("")){
-                    Toast.makeText(Register.this,"CAMPOS SIN RELLENAR", Toast.LENGTH_SHORT).show();
-                }else {
+                if (User.equals("") || Pass.equals("") || RePass.equals("")) {
+                    Toast.makeText(Register.this, "Rellena los campos", Toast.LENGTH_LONG).show();
+                } else {
                     if (Pass.equals(RePass)) {
                         if (dBhelper.OkUser(User)) {
-                            Toast.makeText(Register.this,"Usuario existente", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this, "User Existente", Toast.LENGTH_LONG).show();
                             return;
                         }
-
-                        boolean registro = dBhelper.insertDatos(User, Pass);
-                        if (registro){
-                            Toast.makeText(Register.this,
-                                    "Te hemos hakeado el telefono :)",
-                                    Toast.LENGTH_LONG).show();
-                        }else
-                            Toast.makeText(Register.this,
-                                    "Usuario no registrado",
-                                    Toast.LENGTH_LONG).show();
-                    }
-                    else {
-                        Toast.makeText(Register.this,
-                                "NO COINCIDEN CONTRASEÑAS",
-                                Toast.LENGTH_LONG).show();
+                        //Proceed with registration
+                        boolean registeredSuccess = dBhelper.insertDatos(User, Pass);
+                        if (registeredSuccess)
+                            Toast.makeText(Register.this, "Te hemos Hakeado el telefono :)", Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(Register.this, "Fallo", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(Register.this, "No son iguales las contraseñas", Toast.LENGTH_LONG).show();
                     }
                 }
             }

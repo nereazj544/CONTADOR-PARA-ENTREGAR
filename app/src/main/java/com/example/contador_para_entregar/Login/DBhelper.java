@@ -37,8 +37,6 @@ public class DBhelper extends SQLiteOpenHelper {
                 Campo2 + " TEXT);";
         db.execSQL(SQLcreate);
 
-
-        ;
     }
 
     @Override
@@ -51,8 +49,8 @@ public class DBhelper extends SQLiteOpenHelper {
     public  boolean insertDatos (String user, String pass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("user", Campo1id);
-        values.put("pass", Campo2);
+        values.put(user, Campo1id);
+        values.put(pass, Campo2);
 
 
         long result = db.insert("tabla", null, values);
@@ -62,7 +60,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
 
     //Chequear los nombres de usuario
-    public  boolean OkUser(String user){
+    public boolean OkUser(String user){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from " +
                 "tabla where usuario = ?", new String[]{user});
@@ -71,21 +69,18 @@ public class DBhelper extends SQLiteOpenHelper {
         else return false;
     }
 
-
-
     //Chequear ambas
-    public  boolean OkSP (String user, String  pass){
+    public boolean OkSP(String user, String pass){
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(
-                "select * from usuarios where password = ?" +
+                "select * from tabla where password = ?" +
                         "and usuario = ?",
                 new String[]{pass, user});
         if (cursor.getCount() > 0)
             return true;
         else return false;
     }
-
 
 }//END APP
 
