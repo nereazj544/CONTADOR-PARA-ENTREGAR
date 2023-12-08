@@ -71,15 +71,11 @@ public class Register extends AppCompatActivity {
 
                 if (User.equals("") ||
                         Pass.equals("") || RePass.equals("")){
-                    Toast.makeText(Register.this,
-                            "CAMPOS SIN RELLENAR",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this,"CAMPOS SIN RELLENAR", Toast.LENGTH_SHORT).show();
                 }else {
                     if (Pass.equals(RePass)) {
                         if (dBhelper.OkUser(User)) {
-                            Toast.makeText(Register.this,
-                                    "Usuario existente",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Register.this,"Usuario existente", Toast.LENGTH_SHORT).show();
                             return;
                         }
 

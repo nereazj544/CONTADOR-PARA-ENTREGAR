@@ -43,7 +43,7 @@ public class DBhelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("Drop table if exists user");
+            db.execSQL("Drop table if exists tabla");
             onCreate(db);
     }
 
@@ -51,12 +51,13 @@ public class DBhelper extends SQLiteOpenHelper {
     public  boolean insertDatos (String user, String pass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Campo1id, user);
-        values.put(Campo2, pass);
+        values.put("user", Campo1id);
+        values.put("pass", Campo2);
 
 
-        long result = db.insert(NombreTabla, null, values);
-        return result != -1;
+        long result = db.insert("tabla", null, values);
+        if (result == -1)  return true;
+        else return false;
     }
 
 
@@ -70,16 +71,7 @@ public class DBhelper extends SQLiteOpenHelper {
         else return false;
     }
 
-    //Chequear contraseñas
-    public  boolean OkPass(String pass){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(
-                "select * from tabla where password = ?",
-                new String[]{pass});
-        if (cursor.getCount() > 0)
-            return true;
-        else return false;
-    }
+
 
     //Chequear ambas
     public  boolean OkSP (String user, String  pass){
