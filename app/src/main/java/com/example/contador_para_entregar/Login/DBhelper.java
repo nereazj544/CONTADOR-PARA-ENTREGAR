@@ -1,0 +1,105 @@
+package com.example.contador_para_entregar.Login;
+
+import static org.xmlpull.v1.XmlPullParser.TEXT;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+public class DBhelper extends SQLiteOpenHelper {
+    public static final int version =1;
+    public  static  final String name = "user.db";
+
+    //TABLA
+    public  static  final String NombreTabla ="tabla";
+    public  static  final String Campo1id ="usuario";
+    public  static  final String Campo2 ="password";
+
+    //Tienda (en caso de que llegase a funcionar en algun momento)
+    public  static final String Campo3 = "puntos";
+    public  static  final String Campo4  = "compras";
+    public  static  final String Campo5 = "autoclick";
+
+
+
+    public DBhelper(Context context) {
+        super(context, name, null, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String SQLcreate = "Create table " + NombreTabla +
+                " (" + Campo1id + " Interger primary key, " +
+                Campo2 + "TEXT);"
+
+                /*No borrar esa ultima ";"*/
+                ;
+
+                db.execSQL(SQLcreate);
+
+
+        ;
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            db.execSQL("Drop table if exists user");
+            onCreate(db);
+    }
+
+    //Insertar Datos
+    public  boolean insertDatos (String user, String pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user", Campo1id);
+        values.put("user", Campo2);
+
+
+        long result = db.insert("tabla", null, values);
+        if (result == -1)  return true;
+        else return false;
+    }
+
+
+    //Chequear los nombres de usuario
+    public  boolean OkUser(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from " +
+                "tabla where usuario = ?", new String[]{user});
+        if (cursor.getCount() > 0)
+            return true;
+        else return false;
+    }
+
+    //Chequear contraseñas
+    public  boolean OkPass(String pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(
+                "select * from tabla where password = ?",
+                new String[]{pass});
+        if (cursor.getCount() > 0)
+            return true;
+        else return false;
+    }
+
+    //Chequear ambas
+    public  boolean OkSP (String user, String  pass){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "select * from usuarios where password = ?" +
+                        "and usuario = ?",
+                new String[]{pass, user});
+        if (cursor.getCount() > 0)
+            return true;
+        else return false;
+    }
+
+
+}//END APP
+
+
