@@ -15,12 +15,14 @@ import com.example.contador_para_entregar.Login.DBhelper;
 
 public class Register extends AppCompatActivity {
 
+    private DBhelper dBhelper;
+
     //Boton
     Button btnRegis;
 
     //EditText
     EditText user, pass, repass;
-    com.example.contador_para_entregar.Login.DBhelper DBhelper;
+
     TextView loggin;
 
     @Override
@@ -33,7 +35,7 @@ public class Register extends AppCompatActivity {
         btnRegis = (Button) findViewById(R.id.register);
         loggin = findViewById(R.id.login);
 
-        final DBhelper DBhelper = new DBhelper(this);
+
 
 
         //CAMBIO DE COLOR
@@ -47,6 +49,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Register.this, MainActivityLogin.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -71,14 +74,14 @@ public class Register extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                 }else {
                     if (Pass.equals(RePass)) {
-                        if (DBhelper.OkUser(User)) {
+                        if (dBhelper.OkUser(User)) {
                             Toast.makeText(Register.this,
                                     "Usuario existente",
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }
 
-                        boolean registro = DBhelper.insertDatos(User, Pass);
+                        boolean registro = dBhelper.insertDatos(User, Pass);
                         if (registro){
                             Toast.makeText(Register.this,
                                     "Te hemos hakeado el telefono :)",

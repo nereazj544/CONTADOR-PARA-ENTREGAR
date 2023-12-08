@@ -32,14 +32,10 @@ public class DBhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQLcreate = "Create table " + NombreTabla +
-                " (" + Campo1id + " Interger primary key, " +
-                Campo2 + "TEXT);"
-
-                /*No borrar esa ultima ";"*/
-                ;
-
-                db.execSQL(SQLcreate);
+        String SQLcreate = "CREATE TABLE " + NombreTabla +
+                " (" + Campo1id + " INTEGER PRIMARY KEY, " +
+                Campo2 + " TEXT);";
+        db.execSQL(SQLcreate);
 
 
         ;
@@ -55,13 +51,12 @@ public class DBhelper extends SQLiteOpenHelper {
     public  boolean insertDatos (String user, String pass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("user", Campo1id);
-        values.put("user", Campo2);
+        values.put(Campo1id, user);
+        values.put(Campo2, pass);
 
 
-        long result = db.insert("tabla", null, values);
-        if (result == -1)  return true;
-        else return false;
+        long result = db.insert(NombreTabla, null, values);
+        return result != -1;
     }
 
 

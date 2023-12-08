@@ -54,6 +54,7 @@ public class MainActivityLogin extends AppCompatActivity {
                    Intent logg = new Intent(MainActivityLogin.this, PantallaActivity.class);
                    startActivity(logg);
 
+
                 }else{
                     Toast.makeText(MainActivityLogin.this, "No carrula", Toast.LENGTH_LONG).show();
                 }
