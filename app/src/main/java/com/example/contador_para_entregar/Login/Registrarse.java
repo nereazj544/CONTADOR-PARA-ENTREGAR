@@ -19,7 +19,7 @@ import com.example.contador_para_entregar.R;
 
 public class Registrarse extends AppCompatActivity {
 
-    Button resesion;
+    Button resesion, goLogging;
     EditText reuser, recontra, reecontra;
 
     @Override
@@ -30,7 +30,8 @@ public class Registrarse extends AppCompatActivity {
         recontra = (EditText) findViewById(R.id.contra);
         reecontra = (EditText) findViewById(R.id.contraf);
         reuser = (EditText) findViewById(R.id.name_user);
-        resesion = (Button) findViewById(R.id.iniciar);
+        resesion = (Button) findViewById(R.id.register);
+        goLogging = (Button) findViewById(R.id.login);
 
         final Database_Helper DBhelper = new Database_Helper(this);
 
@@ -53,8 +54,8 @@ public class Registrarse extends AppCompatActivity {
                             "CAMPOS SIN RELLENAR",
                             Toast.LENGTH_SHORT).show();
                 }else {
-                    if (contra.equals(reContra)){
-                        if(DBhelper.OkUser(user)){
+                    if (contra.equals(reContra)) {
+                        if (DBhelper.OkUser(user)) {
                             Toast.makeText(Registrarse.this,
                                     "Usuario existente",
                                     Toast.LENGTH_SHORT).show();
@@ -62,11 +63,13 @@ public class Registrarse extends AppCompatActivity {
                         }
 
                         boolean registro = DBhelper.insertarDatos(user, contra);
-                        if(registro)
-                            Toast.makeText(Registrarse.this,
+                        if (registro){
+                             Toast.makeText(Registrarse.this,
                                     "Te hemos hakeado el telefono :)",
                                     Toast.LENGTH_SHORT).show();
-                        else
+
+
+                    }else
                             Toast.makeText(Registrarse.this,
                                     "Usuario no registrado",
                                     Toast.LENGTH_SHORT).show();
@@ -99,21 +102,6 @@ public class Registrarse extends AppCompatActivity {
 
 
 
-    public  void  cuenta(View v){
-        //Para ir a la iniciar sesion de la cuenta.
-        Intent in = new Intent(this, MainActivityLogin.class);
-        startActivity(in);
-        finish();
-    }
-
-    /*
-    public void iniciar(View v){
-        Intent inicar = new Intent(this, MainActivity.class);
-        startActivity(inicar);
-        finish();
-    }
-
-     */
 
 
 

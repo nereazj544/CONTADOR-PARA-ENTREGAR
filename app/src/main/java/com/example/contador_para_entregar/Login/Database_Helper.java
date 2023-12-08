@@ -50,6 +50,25 @@ public class Database_Helper extends SQLiteOpenHelper {
         else return false;
     }
 
+    public  boolean OkContra (String contra){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(
+                "select * from usuarios where contra = ?",
+                new String[]{contra});
+        if (cursor.getCount() > 0)
+            return true;
+        else return false;
+    }
+    public  boolean OkUseryContra (String contra, String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(
+                "select * from usuarios where contra = ? and nombre_de_usuario = ?",
+                new String[]{contra, user});
+        if (cursor.getCount() > 0)
+            return true;
+        else return false;
+    }
+
 
 
 
