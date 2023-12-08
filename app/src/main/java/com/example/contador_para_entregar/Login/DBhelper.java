@@ -32,9 +32,8 @@ public class DBhelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQLcreate = "CREATE TABLE " + NombreTabla +
-                " (" + Campo1id + " INTEGER PRIMARY KEY, " +
-                Campo2 + " TEXT);";
+        String SQLcreate = "CREATE TABLE " + NombreTabla + " (" + Campo1id + " TEXT PRIMARY KEY,"
+                + Campo2 + " TEXT);";
         db.execSQL(SQLcreate);
 
     }
@@ -49,11 +48,11 @@ public class DBhelper extends SQLiteOpenHelper {
     public  boolean insertDatos (String user, String pass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(user, Campo1id);
-        values.put(pass, Campo2);
+        values.put(Campo1id, user);
+        values.put(Campo2, pass);
 
 
-        long result = db.insert("tabla", null, values);
+        long result = db.insert(NombreTabla, null, values);
         if (result == -1)  return true;
         else return false;
     }
@@ -62,8 +61,7 @@ public class DBhelper extends SQLiteOpenHelper {
     //Chequear los nombres de usuario
     public boolean OkUser(String user){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from " +
-                "tabla where usuario = ?", new String[]{user});
+        Cursor cursor = db.rawQuery("select * from tabla where usuario = ?", new String[]{user});
         if (cursor.getCount() > 0)
             return true;
         else return false;
@@ -74,13 +72,18 @@ public class DBhelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(
-                "select * from tabla where password = ?" +
+                "select * from tabla where password = ? " +
                         "and usuario = ?",
                 new String[]{pass, user});
         if (cursor.getCount() > 0)
             return true;
         else return false;
     }
+
+
+
+
+
 
 }//END APP
 
