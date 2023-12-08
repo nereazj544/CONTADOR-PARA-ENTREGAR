@@ -1,9 +1,6 @@
-package com.example.contador_para_entregar.Login;
+package com.example.contador_para_entregar;
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.contador_para_entregar.R;
+import com.example.contador_para_entregar.Login.DBhelper;
 
 public class Register extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class Register extends AppCompatActivity {
 
     //EditText
     EditText user, pass, repass;
-    DBhelper DBhelper;
+    com.example.contador_para_entregar.Login.DBhelper DBhelper;
     TextView loggin;
 
     @Override

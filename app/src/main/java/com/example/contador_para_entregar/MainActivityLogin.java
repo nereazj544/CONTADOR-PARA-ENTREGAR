@@ -1,4 +1,4 @@
-package com.example.contador_para_entregar.Login;
+package com.example.contador_para_entregar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,9 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.contador_para_entregar.MainActivity;
-import com.example.contador_para_entregar.PantallaActivity;
-import com.example.contador_para_entregar.R;
+import com.example.contador_para_entregar.Login.DBhelper;
 
 public class MainActivityLogin extends AppCompatActivity {
 
@@ -54,6 +52,7 @@ public class MainActivityLogin extends AppCompatActivity {
 
                 if (isLogged){
                    Intent logg = new Intent(MainActivityLogin.this, PantallaActivity.class);
+                   startActivity(logg);
 
                 }else{
                     Toast.makeText(MainActivityLogin.this, "No carrula", Toast.LENGTH_LONG).show();
