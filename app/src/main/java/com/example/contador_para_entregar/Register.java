@@ -76,9 +76,9 @@ public class Register extends AppCompatActivity {
                         //Proceed with registration
                         boolean registeredSuccess = dBhelper.insertDatos(User, Pass);
                         if (registeredSuccess)
-                            Toast.makeText(Register.this, "Te hemos Hakeado el telefono :)", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Register.this, "fallo", Toast.LENGTH_LONG).show();
                         else
-                            Toast.makeText(Register.this, "Fallo", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Register.this, "Te hemos hakeado el telefono :)", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(Register.this, "No son iguales las contraseñas", Toast.LENGTH_LONG).show();
                     }

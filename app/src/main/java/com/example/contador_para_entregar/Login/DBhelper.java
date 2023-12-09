@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBhelper extends SQLiteOpenHelper {
-    public static final int version =1;
+    public static final int version = 2;
     public  static  final String name = "user.db";
 
     //TABLA
